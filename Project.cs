@@ -13,7 +13,8 @@ namespace project_65030034
         {
             Silla = 1,
             Moke = 2,
-            Saitong =3
+            Saitong = 3,
+            Nainoy = 4
         }
     }
 }
