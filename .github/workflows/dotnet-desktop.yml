@@ -45,8 +45,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-
- run-selected-unittests:
+  run-selected-unittests:
     runs-on: windows-latest
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
@@ -64,9 +63,9 @@ jobs:
       - name: Run MSBuild
         id: run_msbuild
         run: |
-          msbuild ./project_65030034.sln\  /t:clean /p:Configuration=Debug
-          nuget restore ./project_65030034\.sln
-          msbuild ./project_65030034.sln\  /t:build /p:Configuration=Debug
+          msbuild ./project_65030034.sln /t:clean /p:Configuration=Debug
+          nuget restore ./project_65030034.sln
+          msbuild ./project_65030034.sln /t:build /p:Configuration=Debug
      
       - name: Setup VSTest and add to PATH
         uses: darenm/Setup-VSTest@v1
@@ -74,5 +73,5 @@ jobs:
 
       - name: Test Project Members
         id: run_vstest
-        working-directory: .\TestProject\\bin\Debug\net6.0
+        working-directory: ./TestProject/bin/Debug/net6.0
         run: vstest.console.exe TestProject.dll /Tests:TestProjectMembersCount,TestProjectMemberIds
