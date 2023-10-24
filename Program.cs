@@ -13,14 +13,8 @@ namespace Project_65030034
                     + member);
             }
 
-            Console.WriteLine($"Project members count = {Enum.GetNames(typeof(Project.Members)).Length == 4 }");
-            public void TestProjectMemberIds()
-            {
-                 Assert.IsTrue((int)Project.Members.Silla == 1);
-                 Assert.IsTrue((int)Project.Members.Moke == 2);
-                 Assert.IsTrue((int)Project.Members.Saitong == 3);
-                 Assert.IsTrue((int)Project.Members.Nainoy == 4);
-            }
+            Console.WriteLine($"Project members count = {Enum.GetNames(typeof(Project.Members)).Length}");
+           
 
         }
     }
